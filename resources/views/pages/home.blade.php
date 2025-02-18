@@ -51,13 +51,13 @@
                                             </div>
                                             <!-- {{-- Form untuk menghapus tugas, menggunakan metode DELETE. --}} -->
                                             <form action="{{ route('tasks.destroy', $task->id) }}" method="POST"
-                                                style="display: inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-sm p-0">
-                                                    <i class="bi bi-x-circle text-danger fs-5"></i>
-                                                </button>
-                                            </form>
+                                                    style="display: inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm p-0">
+                                                        <i class="bi bi-journal-x fs-5 text-primary"></i>
+                                                    </button>
+                                                </form>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -66,7 +66,7 @@
                                         </p>
                                     </div>
                                     @if (!$task->is_completed)
-                                        <div class="card-footer">
+                                        <div class="card-footer"> 
                                             <!-- {{-- Form untuk menandai tugas sebagai selesai dengan metode PATCH. --}} -->
                                             <form action="{{ route('tasks.complete', $task->id) }}" method="POST">
                                                 @csrf
@@ -85,7 +85,7 @@
                             @endif
                         @endforeach
                         <!-- {{-- Tombol untuk membuka modal penambahan tugas baru, yang terkait dengan daftar tugas tertentu. --}} -->
-                        <button type="button" class="btn btn-sm btn-outline-dark " data-bs-toggle="modal"
+                        <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                         data-bs-target="#addTaskModal" data-list="{{ $list->id }}">
                         <span class="d-flex align-items-center justify-content-center">
                             <i class="bi bi-plus fs-5"></i>
@@ -98,7 +98,7 @@
                 </div>
             </div>
         @endforeach
-       <button type="button" class="btn btn-outline-dark flex-shrink-0" style="width: 18rem; height: fit-content;"
+       <button type="button" class="btn btn-outline-primary flex-shrink-0" style="width: 18rem; height: fit-content;"
        data-bs-toggle="modal" data-bs-target="#addListModal">
        <span class="d-flex align-items-center justify-content-center">
         <i class="bi bi-plus fs-5"></i>
